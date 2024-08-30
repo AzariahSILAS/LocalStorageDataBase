@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+.app{
+width: 700px;
+
+margin: 0 auto;
+background-color: rgb(177, 178, 178) ;
+padding: 20px 0;
+
+}
+.inputBox{
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite; 
+    align-content: center;
+    margin: 0 auto 20px ;
+    
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.row{
+display: flex;
+margin: 5px;
+}
+
+.submitBtn{
+ margin-top: 20px;
+}
+
+.outputBox{
+    width: 500px;
+    height: 500px;
+    border: solid black;
+    margin: 0 auto;
+}
+
+
+td{
+    border: solid black  1px;
+    min-width: 100px;
+    padding: 0 10px;
+    text-align: center;
+}
