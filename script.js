@@ -6,71 +6,106 @@ const passwordRow = document.getElementById('passwordRow');
 const demo = document.getElementById('demo');
 
 
+// let j = 20
 
-localStorage.setItem('car','dodge')
+
+// function buildDataBase() {
+    
+
+    
+//     let newNum = Number(localStorage.getItem('number'))
+//     let j = newNum
+//     j++
+//     localStorage.setItem('number',j)
+//     console.log(j)
+// }
 
 
-function Storage() {
-    localStorage.setItem(unInput.value, pwInput.value)
 
-}
+
+// let j = 0;
+// localStorage.setItem('number',j)
+ 
+// let uname;
+// let pword;
 
 function buildDataBase() {
     const createUN = document.createElement('td');
     const createPW = document.createElement('td');
 
-    createUN.textContent = unInput.value;
-    createPW.textContent = pwInput.value;
+    // createUN.textContent = unInput.value;
+    // createPW.textContent = pwInput.value;
 
-    userNameRow.appendChild(createUN);
-    passwordRow.appendChild(createPW);
+    // userNameRow.appendChild(createUN);
+    // passwordRow.appendChild(createPW);
     
-    let i = 0;
-    i++
-    console.log(i)
+    let newNum = Number(localStorage.getItem('number')); 
+     newNum
+     let j = newNum;
+     j++
+     localStorage.setItem(`number`, j )
+    
+    console.log(j)
 
-    localStorage.setItem('username', unInput.value)
-    localStorage.setItem('password', pwInput.value)
+    localStorage.setItem(`${j}username`, unInput.value)
+    localStorage.setItem(`${j}password`, pwInput.value)
+
+
+    
+    
+
 }
 
 
 
 
-// function buildForm(){
-//     const createUN = document.createElement('td');
-//     const createPW = document.createElement('td');
+function buildForm(){
 
-//     createUN.textContent = unInput.value
-//     createPW.textContent = pwInput.value
-
-//     userNameRow.appendChild(createUN)
-
-//     passwordRow.appendChild(createPW)
-
-//     localStorage.setItem('Name', createUN.textContent )
-//     localStorage.setItem('Password', createPW.textContent )
-
-//     createUN.textContent = localStorage.getItem('Name')
-//     createPW.textContent = localStorage.getItem('Password')
+    for(let i = 0; i < localStorage.length; i++) {
+        let j = localStorage.key(i)
+        let localValue = localStorage.getItem(j)
+        const createTableData = document.createElement('td')
+        createTableData.textContent = localValue
 
 
+        console.log(localValue)
+        if(localStorage.key(i).includes('password')){
+            passwordRow.appendChild(createTableData);
+        } else if(localStorage.key(i).includes('username')){
+            userNameRow.appendChild(createTableData)
+        }
 
-// }
 
+
+
+
+
+
+    }
+
+    // const createUN = document.createElement('td');
+    // const createPW = document.createElement('td');
+
+    // createUN.textContent = unInput.value
+    // createPW.textContent = pwInput.value
+
+    // userNameRow.appendChild(createUN)
+
+    // passwordRow.appendChild(createPW)
+
+    // localStorage.setItem('Name', createUN.textContent )
+    // localStorage.setItem('Password', createPW.textContent )
+
+    // createUN.textContent = localStorage.getItem('Name')
+    // createPW.textContent = localStorage.getItem('Password')
+
+}
+buildForm()
 
 
 submitebtn.addEventListener('click', buildDataBase)
 
 
-// function submit() {
-//   const h2 = document.createElement('h2');  
-//   let textCnt;  
-//   textCnt = unInput.value;
-  
-//   localStorage.setItem('text', textCnt)
-//   h2.textContent = localStorage.getItem('text')
-//   demo.appendChild(h2)
-// }
 
 
 
