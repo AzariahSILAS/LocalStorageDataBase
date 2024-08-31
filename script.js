@@ -6,53 +6,22 @@ const passwordRow = document.getElementById('passwordRow');
 const demo = document.getElementById('demo');
 
 
-// let j = 20
-
-
-// function buildDataBase() {
-    
-
-    
-//     let newNum = Number(localStorage.getItem('number'))
-//     let j = newNum
-//     j++
-//     localStorage.setItem('number',j)
-//     console.log(j)
-// }
-
-
-
-
-// let j = 0;
-// localStorage.setItem('number',j)
- 
-// let uname;
-// let pword;
 
 function buildDataBase() {
     const createUN = document.createElement('td');
     const createPW = document.createElement('td');
 
-    // createUN.textContent = unInput.value;
-    // createPW.textContent = pwInput.value;
-
-    // userNameRow.appendChild(createUN);
-    // passwordRow.appendChild(createPW);
     
     let newNum = Number(localStorage.getItem('number')); 
-     newNum
      let j = newNum;
      j++
      localStorage.setItem(`number`, j )
-    
-    console.log(j)
-
+ 
     localStorage.setItem(`${j}username`, unInput.value)
     localStorage.setItem(`${j}password`, pwInput.value)
 
-
-    
-    
+    window.location.reload()
+ 
 
 }
 
@@ -75,29 +44,7 @@ function buildForm(){
             userNameRow.appendChild(createTableData)
         }
 
-
-
-
-
-
-
     }
-
-    // const createUN = document.createElement('td');
-    // const createPW = document.createElement('td');
-
-    // createUN.textContent = unInput.value
-    // createPW.textContent = pwInput.value
-
-    // userNameRow.appendChild(createUN)
-
-    // passwordRow.appendChild(createPW)
-
-    // localStorage.setItem('Name', createUN.textContent )
-    // localStorage.setItem('Password', createPW.textContent )
-
-    // createUN.textContent = localStorage.getItem('Name')
-    // createPW.textContent = localStorage.getItem('Password')
 
 }
 buildForm()
