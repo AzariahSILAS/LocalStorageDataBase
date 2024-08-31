@@ -11,32 +11,37 @@ const table = document.getElementById('table')
 
 
 
-// submitebtn.addEventListener('click', buildDataBase)
+submitebtn.addEventListener('click', buildRow)
 
 function buildRow() {
-    arr = []
-    for(i=0;i<2;i++){
-        const newRow = document.createElement('tr'); 
-        const newtd = document.createElement('th'); 
-        arr.push(newRow)
-        arr.push(newtd)
-    }
-    const firstrow = arr[0]
-    const username = arr[1]
-    const secondrow = arr[2]
-    const password = arr[3]
-    username.textContent = 'username'
-    password.textContent = 'password'
-    table.appendChild(firstrow)
-    firstrow.appendChild(username)
-    table.appendChild(secondrow)
-    secondrow.appendChild(password)
+    let index = localStorage.getItem('number')
+    index++
+    //---------
+    localStorage.setItem(`${index}username`,unInput.value);
+    localStorage.setItem(`${index}password`,pwInput.value);
+    //-------
+    localStorage.setItem('number',index)
 
-    console.log(arr)
-    
-    
+    const creatun = document.createElement('td')
+    const creatpw = document.createElement('td')
+    creatun.textContent = unInput.value
+    creatpw .textContent = pwInput.value
+    userNameRow.appendChild(creatun)
+    passwordRow.appendChild(creatpw)
+
 }
-buildRow()
+
+function buildTabel() {
+    let arr = []
+    for(i=0; i < localStorage.length; i++) {
+        arr.push(localStorage.key(i))
+        
+    }
+    let sortArr = arr.sort()
+    console.log(sortArr)
+}
+buildTabel()
+
 
 
 
