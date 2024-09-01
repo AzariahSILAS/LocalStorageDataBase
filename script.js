@@ -8,44 +8,14 @@ const outputBox = document.getElementById('outputBox')
 
 
 
-
-
-
-
-// submitebtn.addEventListener('click', buildRow)
-
-// function buildRow() {
-//     // let index = localStorage.getItem('number')
-//     // index++
-//     //---------
-//     // localStorage.setItem(`${index}username`,unInput.value);
-//     // localStorage.setItem(`${index}password`,pwInput.value);
-//     //-------
-//     // localStorage.setItem('number',index)
-
-//     // const creatun = document.createElement('td')
-//     // const creatpw = document.createElement('td')
-//     // creatun.textContent = unInput.value
-//     // creatpw .textContent = pwInput.value
-//     // userNameRow.appendChild(creatun)
-//     // passwordRow.appendChild(creatpw)
-
-// }
 function loadTable() {
-    // let arr = ['azzie', 'Amy', 'Ivey', 'Abe', 'Ajay', 'Anna','And More'];
+
     let unsortedUsernames = [];
     let usernames = [];
     let unsortedPasswords = [];
     let passwords = [];
     for(i=0; i < localStorage.length; i++) {
-        // console.log(arr[i])
-        // const creatText = document.createElement('h2')
-        // creatText.textContent = arr[i]
-        // outputBox.appendChild(creatText)
-        // let unsortedUsernames = [];
-        // let usernames = []
-        // let unsortedPasswords = []
-        // let passwords = []
+
         
         if(localStorage.key(i).includes('username')){
             unsortedUsernames.push(localStorage.key(i));
@@ -72,15 +42,6 @@ function loadTable() {
 }
 loadTable()
 
-// function buildTabel() {
-//     let arr = []
-//     for(i=0; i < localStorage.length; i++) {
-//         arr.push(localStorage.key(i))
-        
-//     }
-//     let sortArr = arr.sort()
-//     console.log(sortArr)
-// }
 
 
 
