@@ -59,15 +59,16 @@ function loadTable() {
             creatun.textContent = localStorage.getItem(usernames[j])
             
             passwords = unsortedPasswords.sort();
-            creatpw .textContent = localStorage.getItem(passwords[j])
+            creatpw.textContent = localStorage.getItem(passwords[j])
                 
-            if(passwords.length < 5) {
+            if(passwords.length < 190) {
                 userNameRow.appendChild(creatun) 
                 passwordRow.appendChild(creatpw)
                 console.log(passwords.length)
-            } else {
-                const newRow = document.createElement('tr');
-            }
+            } 
+            // else {
+            //     const newRow = document.createElement('tr');
+            // }
 
     }
     
