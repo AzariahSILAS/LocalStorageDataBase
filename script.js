@@ -12,7 +12,7 @@ const table = document.getElementById('table')
 
 
 
-submitebtn.addEventListener('click', buildRow)
+submitebtn.addEventListener('click', buildRow )
 
 function buildRow() {
     let index = localStorage.getItem('number')
@@ -23,12 +23,50 @@ function buildRow() {
     // -------
     localStorage.setItem('number',index)
 
-    const creatun = document.createElement('td')
-    const creatpw = document.createElement('td')
-    creatun.textContent = unInput.value
-    creatpw .textContent = pwInput.value
-    userNameRow.appendChild(creatun)
-    passwordRow.appendChild(creatpw)
+    const createun = document.createElement('td')
+    const createpw = document.createElement('td')
+    createun.textContent = unInput.value
+    createpw .textContent = pwInput.value
+    userNameRow.appendChild(createun)
+    passwordRow.appendChild(createpw)
+
+    //----------------
+    let localDataKey = []
+    let localDataUsernames = []
+    let localDataPasswords = []
+   
+    
+    for(i=0; i < localStorage.length; i++){
+        
+        localDataKey.push(localStorage.key(i))
+        localDataKey.sort()
+
+        if(localStorage.key(i).includes('username')){
+            localDataUsernames.push(localStorage.getItem(localStorage.key(i)))
+            localDataUsernames.sort()
+        } else if(localStorage.key(i).includes('password')){
+            localDataPasswords.push(localStorage.getItem(localStorage.key(i)))
+            localDataPasswords.sort()
+        }
+        
+        
+
+     
+    }
+    // if(localDataUsernames.includes(unInput.value) && localDataPasswords.includes(pwInput.value)){
+    //     console.log('already have this account')
+    // } else {
+    //     console.log('created a new account')
+    // }
+    
+  
+    // console.log(localDataKey)
+    console.log('usernames',localDataUsernames)  
+    console.log('passwords',localDataPasswords) 
+    
+
+
+
 
 }
 
@@ -53,24 +91,25 @@ function loadTable() {
     };
     
     for(j=0; j < passwords.length; j++){
-        const creatun = document.createElement('td')
-        const creatpw = document.createElement('td')
+        const createun = document.createElement('td')
+        const createpw = document.createElement('td')
          
-            creatun.textContent = localStorage.getItem(usernames[j])
+            createun.textContent = localStorage.getItem(usernames[j])
             
             passwords = unsortedPasswords.sort();
-            creatpw.textContent = localStorage.getItem(passwords[j])
+            createpw.textContent = localStorage.getItem(passwords[j])
                 
             if(passwords.length < 190) {
-                userNameRow.appendChild(creatun) 
-                passwordRow.appendChild(creatpw)
-                console.log(passwords.length)
+                userNameRow.appendChild(createun) 
+                passwordRow.appendChild(createpw)
+                // console.log(passwords.length)
             } 
             // else {
             //     const newRow = document.createElement('tr');
             // }
 
     }
+    
     
     
 }
