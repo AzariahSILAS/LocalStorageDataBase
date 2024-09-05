@@ -57,7 +57,7 @@ function updateDataBase() {
         localStorage.setItem(`${number}password`, pwInput.value)
         number++
 
-    } else {
+    } else if(usernames.includes(unInput.value) && passwords.includes(pwInput.value)) {
         let foundUsername = null;
         let foundPassword = null;
 
@@ -84,6 +84,8 @@ function updateDataBase() {
         if(foundPassword) {
             localStorage.removeItem(foundPassword)
         }
+
+        number--
     
     }
     
