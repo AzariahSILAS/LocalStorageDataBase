@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>add note</h1>
+    <input id="input" type="text">
+    <button id="btn">click me</button>
+    <div id="body">
+
+    </div>
+    <script>
+        const input = document.getElementById('input');
+        const btn = document.getElementById('btn');
+        const body = document.getElementById('body')
+        let localData = []
+        
+        function createArray() {
+            
+            if(localData.includes(input.value)){
+
+                index = localData.indexOf(input.value)
+                localData.splice(index, 1)
+                // for(i=0; i<localData; i++) {
+                //     index = localData[i]
+                // }
+                console.log('you already have this')
+            } else if(input.value != '') {
+                localData.push(input.value)
+            }
+            
+            console.log(localData)
+
+        }
+        
+
+
+        btn.addEventListener('click', createArray)
+      
+
+
+    </script>
+</body>
+</html>
