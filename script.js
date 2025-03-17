@@ -26,7 +26,7 @@ function loadDataBase() {
     for(i=0; i < localStorage.length; i++){
         if(localStorage.key(i).includes('username')) {
             usernames.push(localStorage.getItem(localStorage.key(i))) 
-        } else if(localStorage.key(i).includes('assword')) {
+        } else if(localStorage.key(i).includes('password')) {
             passwords.push(localStorage.getItem(localStorage.key(i))) 
         }
     }
